@@ -1,0 +1,168 @@
+:root {
+  --bg-color: #f7f9fc;
+  --main-color: #2ecc71;
+  --main-color-dark: #27ae60;
+  --text-color: #2c3e50;
+  --input-bg: #fff;
+  --border-color: #ccc;
+  --card-bg: #ffffff;
+  --shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  --danger: crimson;
+  --completed-text: gray;
+  --filter-bg: #ecf0f1;
+  --filter-active: #3498db;
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color);
+  font-family: var(--font-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.todo-app {
+  background: var(--card-bg);
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  outline: none;
+}
+
+.add-btn {
+  background: var(--main-color);
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background: var(--main-color-dark);
+}
+
+.clear-btn {
+  display: block;
+  margin: 10px auto;
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.clear-btn:hover {
+  background: darkred;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task.completed .task-text {
+  text-decoration: line-through;
+  color: var(--completed-text);
+}
+
+.task .task-text {
+  flex: 1;
+  cursor: pointer;
+}
+
+.task button {
+  background: transparent;
+  border: none;
+  color: var(--danger);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.filter-btn {
+  padding: 5px 10px;
+  border: none;
+  background: var(--filter-bg);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--filter-active);
+  color: white;
+}
+
+.empty-message {
+  text-align: center;
+  margin-top: 15px;
+  color: #888;
+  display: none;
+}
+
+.task-count {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.task-input.error {
+  border: 2px solid crimson;
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
