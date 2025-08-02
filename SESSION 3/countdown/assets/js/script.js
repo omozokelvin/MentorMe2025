@@ -59,3 +59,11 @@ const renderTime =(minutes, seconds) => {
   minuteDisplay.innerText = minutes;
   secondDisplay.innerText = seconds > 9 ? `${seconds}`.padEnd(2, '0'): `${seconds}`.padStart(2, '0');
 }
+
+function getFirstLetter(value){
+  return value.charAt(0).toUpperCase();
+}
+
+const firstName = 'Kelvin';
+
+getFirstLetter(firstName)
