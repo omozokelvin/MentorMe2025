@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown</title>
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+
+  <form id="countdown-form">
+    <div>
+    <input type="number" placeholder="Minutes" id="minutes-input" min="0" name="minutes">
+
+    <input type="number" placeholder="Seconds" id="seconds-input" min="0" max="59" name="seconds">
+    </div>
+
+    <button type="submit" id="start-button">Start</button>
+  </form>
+
+
+    <h1 id="countdown-display">
+      <span id="minutes-display"></span>:
+      <span id="seconds-display"></span>
+    </h1>
+  
+</head>
+<body>
+  
+
+
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>

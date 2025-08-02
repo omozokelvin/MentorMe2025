@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+:root{
+  --primary-color: #1877f2;
+  --accent-color: #42b72a;
+  --text-color: #1c1e21;
+  --light-grey: #f0f2f5;
+  --border-grey: #ccd0d5;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  --transition: 0.3s ease-in-out;
+}
+
+html,body{
+  height: 100%;
+}
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: var(--light-grey);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main{
+  flex-grow: 1;
+}
+
+.page-wrapper{
+  display: flex;
+  align-items: center; /* -- center them vertically */
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.intro-selection{
+  flex: 1;
+  width: 500px;
+  flex-shrink: 0;
+}
+
+.fb-logo{
+  width: 340px;
+  height: auto;
+  margin-bottom: 20px;
+  max-width: 100%; /* ensures it doesn't overflow on small screens */
+}
+
+.intro-text{
+  font-size: 1.6 rem;
+  line-height: 1.4;
+  font-weight: bold;
+  max-width: 400px;
+}
+
+.form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-card{
+  flex: 1;
+  background: #fff;
+  padding: 30px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 550px;
+  width: 400px;  
+  flex-shrink: 0;
+  padding-bottom: 30px;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-form input{
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-grey);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.login-form input:focus{
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.login-btn{
+  background-color: #1877f2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #145dc8;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.forgot-password {
+  text-align: center;
+  font-size: 14px;
+  color: #1877f2;
+  text-decoration: none;
+  margin-top: -4px;
+}
+
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: #ccc;
+  margin: 10px 0;
+}
+
+.create-account-btn {
+  background-color: #42b72a;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-account-btn:hover {
+  background-color: #36a420;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+
+.login-form button{
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.page-link{
+   text-align: center;
+  font-size: 0.9rem;
+  margin-top: 12px;
+  padding: 0 10px;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-link a{
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.page-link a:hover{
+  text-decoration: underline;
+}
+
+.footer{
+  margin-top:50px;
+  padding: 30px 0;
+  background: #fff;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.footer-container{
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.language-list, .footer-links{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 16px;
+  margin-bottom: 10px;
+}
+
+.language-list a, .footer-links a{
+  text-decoration: none;
+  color: #555;
+}
+
+.language-list a:hover, .footer-links a:hover{
+  text-decoration: underline;
+}
+
+footer p{
+  margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-selection, .login-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    margin: 0 auto;
+  }
+
+  .fb-logo {
+    width: 200px;
+  }
+}

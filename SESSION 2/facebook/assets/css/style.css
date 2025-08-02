@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  --primary-color: #1877f2;
+  --secondary-color: #36A420;
+  --text-color: #1c1e21;
+  --background-color: #F2F4F7;
+  --grey-color: #cccccc;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  all: unset;
+  background-color: var(--background-color);
+  font-family: "Schibsted Grotesk", sans-serif;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.main-content {
+  display: flex;
+  height: 70vh;
+  align-items: center;
+}
+
+.main-content section:first-child {
+width: 60%;
+}
+
+
+.main-content section:last-child {
+  flex-grow: 1;
+} 
+
+.main-content section:last-child form {
+  background-color: #ffffff;
+  padding: 16px;
+  padding-bottom: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+}
+
+input, button {
+  border-radius: 6px;
+  font-size: 17px;
+  padding-block: 14px;
+  padding-inline: 16px;
+  border: 1px solid var(--grey-color);
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+}
+
+input::placeholder {
+  color: var(--grey-color);
+}
+
+#logo {
+  width: 321px;
+  height: auto;
+}
+
+#description {
+  font-size: 28px;
+  color: var(--text-color);
+  max-width: 500px;
+}
+
+#login-button {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#forgot-password {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--grey-color);
+  margin-block: 8px;
+}
+
+
+#create-account-button {
+  background-color: var(--secondary-color);
+  color: white;
+  width: fit-content;
+  cursor: pointer;
+}
+
+#create-page {
+ color: var(--text-color);
+ font-size: 0.875rem;
+ text-align: center;
+}
+
+#create-page a {
+  color: var(--text-color);
+}
+
+footer {
+  background-color: white;
+  
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+  }
+}
+
