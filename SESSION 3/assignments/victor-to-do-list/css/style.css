@@ -1,9 +1,9 @@
 .form-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    border: solid 2px blue;
+    border: solid 2px green;
 }
 
 .todo-container-inpute-form {
@@ -15,17 +15,70 @@
     border: solid 1px  
 } 
 
+#todo-contents {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: solid 2px green;
+}
 .todo-container {
     display: flex;
-    gap: 10px;
     justify-content: space-between;
     align-items: center;
-    border: solid 1px;
-    margin: 20px;
+    padding: 15px;
+    margin: 10px 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.todo-list {
-    border: solid 1px
+
+
+.todo-lis {
+    flex: 1;
+}
+
+.todo-lis ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.todo-lis li {
+    margin: 0;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Task text takes more space */
+.todo-lis li:nth-child(2) {
+    flex: 2;  /* Takes twice as much space as other fields */
+    min-width: 150px;  /* Ensure it doesn't get too narrow */
+}
+
+/* Priority and date take less space */
+.todo-lis li:nth-child(3),
+.todo-lis li:nth-child(4) {
+    flex: 1;
+    min-width: 100px;  /* Fixed minimum width */
+}
+
+/* Task number takes minimal space */
+.todo-lis li:first-child {
+    min-width: 30px;
+    justify-content: center;
+}
+
+.todo-lis strong {
+    font-weight: 600;
+    color: #555;
+    margin-right: 5px;
 }
 
 .list-status {
@@ -70,14 +123,63 @@
 
 .todo-item {
     margin-bottom: 10px;
-    padding: 10px;
     background-color: #f9f9f9;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Completed todo item styling */
+.todo-item.completed {
     background-color: #f0f0f0;
+    opacity: 0.8;
+}
+
+.todo-item.completed .todo-lis li {
+    color: #888;
+    text-decoration: line-through;
+}
+
+/* Keep priority colors visible even when completed */
+.todo-item.completed .priority-high,
+.todo-item.completed .priority-medium,
+.todo-item.completed .priority-low {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+/* Priority Styling */
+.priority-high {
+    color: #e74c3c;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: #ffebee;
+}
+
+.priority-medium {
+    color: #f39c12;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: #fff8e1;
+}
+
+.priority-low {
+    color: #2ecc71;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: #e8f5e9;
+}
+
+.priority-none {
+    color: #7f8c8d;
+    font-style: italic;
 }
 
 .completed-checkbox {
